@@ -1,3 +1,4 @@
+local nacl_sdk_path = os.getenv("NACL_SDK_ROOT")
 local nacl_toolchain_path = os.getenv("NACL_SDK_BIN")
 premake.gcc.cc  = nacl_toolchain_path .. "/x86_64-nacl-gcc"
 premake.gcc.cxx = nacl_toolchain_path .. "/x86_64-nacl-g++"
@@ -12,6 +13,7 @@ project "NaClAMBase64"
 	files { 
 		"NaClAMBase/*.cpp",
 		}
+	includedirs { nacl_sdk_path .. "/include" }
 	configuration "Debug"
 		defines { "DEBUG" }
 		flags { "Symbols" }
@@ -30,6 +32,7 @@ project "NaClAMTest64"
 		"NaClAMTest/*.cpp",
 		}
 	includedirs { "." }
+	includedirs { nacl_sdk_path .. "/include" }
 	links { "NaClAMBase64", "m", "pthread", "ppapi" }
 	configuration "Debug"
 		defines { "DEBUG" }
