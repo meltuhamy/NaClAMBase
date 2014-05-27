@@ -28,8 +28,9 @@ endif
 
 ifeq (pnacl,$(TOOLCHAIN))
 PNACL_USR = $(PNACL_BIN)/../usr
-CFLAGS += -I$(PNACL_USR)/include/bullet
+CFLAGS += -I$(PNACL_USR)/include/bullet -I$(NACL_SDK_ROOT)/toolchain/$(OSNAME)_pnacl/usr/include/bullet
 LDFLAGS = -L$(PNACL_USR)/lib
+OSNAME := $(shell python $(NACL_SDK_ROOT)/tools/getos.py)
 endif
 
 CFLAGS += -I$(CURDIR)
