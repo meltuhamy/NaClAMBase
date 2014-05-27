@@ -1,34 +1,3 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-
-# Compiled Dynamic libraries
-*.so
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-
-*.suo
-
-Debug
-
-Release
-
-*.user
-
-*.sdf
-
-*.opensdf
-
-chrome_data
-
-*.nexe
-
-*.lib
-
-*.make
-
-Makefile
+pnacl
+emscripten
+newlib
